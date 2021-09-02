@@ -1,0 +1,226 @@
+##PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+# 更新所有脚本（包括自用thirdpard脚本）
+25 */4 * * * sleep 68 && jd update >> /root/jd/log/jd.log 2>&1
+
+# 删除 RmLogDaysAgo 指定天数以前的旧日志，本行为不记录日志：
+#57 13 * * * jd clean
+
+# 导出所有互助码清单，日志在log/helpcode下
+#48 * * * * jd myhelp
+
+# 重启挂机程序
+# 33 13 * * * jd hangup
+
+# DIY任务区域
+# 需自行将脚本放在scripts文件夹下
+
+21 15,22 * * * jd jd_speed_sign
+21 7 * * * jd jisuban1 fast
+30 8 * * * jd jisuban2 fast
+30 9 * * * jd jisuban3 fast
+30 10 * * * jd jisuban4 fast
+30 11 * * * jd jisuban5 fast
+30 12 * * * jd jisuban6 fast
+35 13 * * * jd jisuban7 fast
+
+6 0 * * * jd jd_jxlhb
+5 0 * * * jd_zjb
+14 5,20 * * * jd_sign_graphics
+
+
+
+# thirdpard任务区域
+# 定时区域thirdpard开始，误删
+21 9 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_MMdou.js
+30 9,21 18-25 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_opencard12.js
+30 9,21 18-26 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_opencard13.js
+18 9,22 18-31 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_opencard14.js
+18 0-23/2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_wealth_island.js
+18 0,1,9,14,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_wealth_island_help.js
+31 8,22 13-31 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/gua_xmGame.js
+15 6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_DrawEntrance.js
+10 7 1-31/7 * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_all_bean_change.js
+0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_angryCash.js
+0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_angryKoi.js
+#2 9 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_bean_change.js
+#23 1,12,22 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_bean_home.js
+#1 7,12,19 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_beauty.js
+#59 23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_blueCoin.js
+#1 8,12,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_bookshop.js
+#0 0-18/6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_carnivalcity.js
+#10 0,8 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_carnivalcity_help.js
+#2 0-23/4 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_cash.js
+0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_cash_exchange.js
+#15 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ccSign.js
+0 0 1 5 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_cleancart.js
+#5 0,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_club_lottery.js
+#10 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_daily_egg.js
+#13 1,22,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_daily_lottery.js
+30 7 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ddnc_farmpark.js
+#0 0 * 6 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_delCoupon.js
+1 8,12,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_dogsEmploy.js
+#10 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_dreamFactory.js
+1 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_dreamFactory_tuan.js
+33 7,19 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_dwapp.js
+0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_dyj_help.js
+3 1,6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_earn30.js
+34 6,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_fan.js
+0,2 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_fc.js
+1 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_fcdyj.js
+1 0-23/1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_fcffl.js
+#5 6-18/6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_fruit.js
+#20 13 * * 6 thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_get_share_code.js
+#13 1,22 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_gold_creator.js
+30 6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_goodMorning.js
+30 16-23/1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_half_redrain.js
+#13 1,6,22 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_health.js
+#5-45/20 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_health_collect.js
+10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_industryLottery.js
+#10 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jdfactory.js
+#10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jdzz.js
+#10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jin_tie.js
+5 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy-park.js
+#15 0-23/2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy.js
+#15 0-23/1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy_feedPets.js
+30 23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy_park_help.js
+#59 7,15,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy_reward.js
+#15 10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy_run.js
+#10 0-21/3 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_joy_steal.js
+1 0,11,21 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jump.js
+0 18,19 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jxgc.js
+#4 2,10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jxlhb.js
+#20 0-23/3 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jxmc.js
+#0 9,12,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jxnc.js
+10 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_jxqd_new.js
+#0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_kanjia.js
+#0 5 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_kanjia2.js
+#10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_kd.js
+30 1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_kxcdz.js
+#10-20/5 12 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_live.js
+#0,30 0-23/1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_live_redrain.js
+#11 1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_lotteryMachine.js
+0 11 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_lsj.js
+#4 10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_market_lottery.js
+#0 0,1-23/3 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_mohe.js
+#3 0-23/2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_moneyTree.js
+0-59/30 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_moneyTree_heip.js
+30 7 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_morningSc.js
+#10 7 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ms.js
+#20 0,20 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_necklace.js
+#35 1,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_nzmh.js
+#15 6-18/6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_pet.js
+#12 0-23/6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_pigPet.js
+#1 7-21/2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_plantBean.js
+1 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ppdz.js
+30 9,21 12-20 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_qcshj.js
+1 0-23/2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_qqxing.js
+#1 1,2,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_redPacket.js
+0 1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ryhxj.js
+#45 1,12 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_sendBeans.js
+#20 8 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_sgmh.js
+#10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_shop.js
+#14 10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_sign_graphics.js
+#16 22 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_small_home.js
+#8 0-23/3 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_speed.js
+#20 0,22 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_speed_redpocke.js
+#21 3,8 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_speed_sign.js
+10 9,18 9-25 8 * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_star_shop.js
+30 11 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_superBrand.js
+#11 * * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_superMarket.js
+1 0-23/1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_super_redrain.js
+#10 0,7,23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_syj.js
+30 10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_try.js
+0 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_tyt.js
+55 6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_unsubscriLive.js
+#55 23 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_unsubscribe.js
+#40 0,2 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_wish.js
+5 0-23/6 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_wsdlb.js
+1 8 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_wxFans.js
+38 5,18 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_ylyn.js
+0 10 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jd_yqyl.js
+10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jddj_bean.js
+10 0,3,8,11,17 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jddj_fruit.js
+5 */1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jddj_fruit_collectWater.js
+7 */1 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jddj_getPoints.js
+10 0 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jddj_plantBeans.js
+20 1,8 * * * thirdpard /root/jd/thirdpard/shufflewzc_faker2/jx_sign.js
+# 定时区域thirdpard结束，误删
+
+
+
+# jd任务区域，运行jd_scripts脚本，仅列出长期任务作初始化用，AutoAddCron=true时，将自动添加短期任务。
+# 请保留任务名称中的前缀"jd_"，去掉后缀".js"，如果有些任务你不想运行，注释掉就好了，不要删除。
+# 非lxk0301/jd_scripts仓库中的脚本请使用jd命令，不要使用jd命令。请在最后保留一个空行。
+30 8,20 * * * jd jd_bean_change
+23 1,12,22 * * * jd jd_bean_home
+4 0,9 * * * jd jd_bean_sign
+41 7,12,19 * * * jd jd_beauty
+20 * * * * jd jd_big_winner
+0,30 0 * * * jd jd_blueCoin
+38 8,12,18 * * * jd jd_bookshop
+0 0 * * * jd jd_car
+0 0 * * * jd jd_car_exchange
+10 */4 * * * jd jd_cash
+5 7,12,18 * * * jd jd_cfd
+6 0,23 * * * jd jd_club_lottery
+28 */2 * * * jd jd_daily_egg
+20 9 * * 6 jd jd_delCoupon
+50 * * * * jd jd_dreamFactory
+10 6,7 * * * jd jd_family
+15 6-18/6 * * * jd jd_fruit
+23 7 * * * jd jd_get_share_code
+0 1,22 * * * jd jd_gold_creator
+13 1,6,22 * * * jd jd_health
+5-45/20 * * * * jd jd_health_collect
+26 * * * * jd jd_jdfactory
+6 0-5/1,11 * * * jd jd_jdzz
+5 0 * * * jd jd_jin_tie
+45 */2,23 * * * jd jd_joy
+35 */1 * * * jd jd_joy_feedPets
+58 7,15,23 * * * jd jd_joy_reward
+10 13-20/1 * * * jd jd_joy_run
+58 7,15,23 * * * jd jd_joy_steal
+#4 10 * * * jd jd_jxlhb
+47 1 * * * jd jd_kd
+30-50/5 12,23 * * * jd jd_live
+1,31 0-23/1 * * * jd jd_live_redrain
+10 10,23 * * * jd jd_market_lottery
+0 0-23/4 * * * jd jd_mohe
+23 */2 * * * jd jd_moneyTree
+10 6,21 * * * jd jd_ms
+10 0,20 * * * jd jd_necklace
+35 6-18/6 * * * jd jd_pet
+32 0-23/6 * * * jd jd_pigPet
+10 7-22/1 * * * jd jd_plantBean
+41 0,23 * * * jd jd_price
+21 9 * * * jd jd_rankingList
+12 0-23/4 * * * jd jd_redPacket
+47 8,22 * * * jd jd_sgmh
+6 0 * * * jd jd_shop
+46 6,23 * * * jd jd_small_home
+8 0-23/3 * * * jd jd_speed
+45 0,23 * * * jd jd_speed_redpocke
+21 10,21 * * * jd jd_speed_sign
+31 0,1-23/2 * * * jd jd_superMarket
+12 */4 * * * jd jd_syj
+45 23 * * * jd jd_unsubscribe
+#5 0 * * * jd jx_sign
+25 0-22/2 * * * jd jd_carnivalcity
+5 0,8 * * * jd jd_carnivalcity_help
+11 0 * * * jd jd_ccSign
+#59 11,12,23 * * * jd jd_cfdtx
+30 7,23 * * * jd jd_crazy_joy
+10 12 * * * jd jd_crazy_joy_bonus
+30 1,22,23 * * * jd jd_daily_lottery
+30 3,12,22 * * * jd jd_esManager
+18 7,12,20 * * * jd jd_foodRunning
+30 2,20 * * * jd jd_jxg
+15 0-23/3 * * * jd jd_jxmc
+30 9,12,18 * * * jd jd_jxnc
+0 0,12,23 * * * jd jd_lotteryMachine
+35 1,22 * * * jd jd_nzmh
+24 0,12 * * * jd jd_sendBeans
+20 0,2 * * * jd jd_wish
+25 0-22/4 * * * jd_qpqd_diy
+#14 10 * * * jd_sign_graphics
